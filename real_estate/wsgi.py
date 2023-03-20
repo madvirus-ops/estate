@@ -8,9 +8,10 @@ https://docs.djangoproject.com/en/4.1/howto/deployment/wsgi/
 """
 
 import os
+from settings.base import env
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "real_estate.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", f'real_estate.settings.{env("SETTINGS")}')
 
 application = get_wsgi_application()
