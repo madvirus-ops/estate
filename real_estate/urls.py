@@ -21,3 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("super/", admin.site.urls),
 ] + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
+
+admin.site.site_header = "Real Estate Admin Api"
+admin.site.site_title = "Real Estate "
+admin.site.index_title = "Welcome user"

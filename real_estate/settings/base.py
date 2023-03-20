@@ -144,7 +144,7 @@ MEDIA_ROOT = BASE_DIR / "mediafiles"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
+AUTH_USER_MODEL = 'users.User'
 
 import logging
 import logging.config
@@ -185,4 +185,6 @@ logging.config.dictConfig({
         "apps":{"level":"INFO","handlers":["console"],"propagate":False},
         "django.server": DEFAULT_LOGGING["loggers"]["django.server"],
     }
-}) 
+})
+
+
