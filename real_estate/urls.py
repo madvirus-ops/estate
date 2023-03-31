@@ -24,4 +24,4 @@ urlpatterns = [
 
 admin.site.site_header = "Real Estate Admin Api"
 admin.site.site_title = "Real Estate "
-admin.site.index_title = "Welcome user"
+admin.site.index_title = "Welcome user" 
