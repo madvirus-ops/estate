@@ -33,7 +33,7 @@ class UserSerializer(serializers.ModelSerializer):
             "profile_image",
             "country",
             "city",
-            "top_agent"
+            "top_agent",
         ]
 
     def get_first_name(self, obj):
@@ -41,6 +41,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     def get_last_name(self, obj):
         return obj.last_name.title()
+
     def get_full_name(self, obj):
         return obj.get_fullname()
 
@@ -57,5 +58,4 @@ class CreateUserSerializer(UserCreateSerializer):
         fields = ["id", "username", "email", "first_name", "last_name", "password"]
 
 
-
-#do pip install and also checkout maildrop
+# do pip install and also checkout maildrop
