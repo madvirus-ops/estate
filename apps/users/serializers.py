@@ -17,7 +17,7 @@ class UserSerializer(serializers.ModelSerializer):
     top_agent = serializers.BooleanField(source="profile.top_agent")
     first_name = serializers.SerializerMethodField()
     last_name = serializers.SerializerMethodField()
-    full_name = serializers.SerializerMethodField(source="get_full_name")
+    full_name = serializers.SerializerMethodField()
 
     class Meta:
         model = User
@@ -33,14 +33,16 @@ class UserSerializer(serializers.ModelSerializer):
             "profile_image",
             "country",
             "city",
-            "top_seller",
+            "top_agent"
         ]
 
     def get_first_name(self, obj):
         return obj.first_name.title()
 
-    def get_first_name(self, obj):
+    def get_last_name(self, obj):
         return obj.last_name.title()
+    def get_full_name(self, obj):
+        return obj.get_fullname()
 
     def to_representation(self, instance):
         representation = super(UserSerializer, self).to_representation(instance)

@@ -168,9 +168,10 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME":timedelta(days=1),
     'SIGNING_KEY':env("SIGNING_KEY"),
     "AUTH_HEADER_NAME":"HTTP_AUTHORIZATION",
-    "AUTH_TOKEN_CLASSES":("rest_framework_simpletjwt.tokens.AccessToken",),
+    "AUTH_TOKEN_CLASSES":("rest_framework_simplejwt.tokens.AccessToken",),
 
 }
+
 
 DJOSER ={
     "LOGIN_FIELD":"email",
@@ -187,7 +188,7 @@ DJOSER ={
     "SERIALIZERS":{
         "user_create":"apps.users.serializers.CreateUserSerializer",
         "user":"apps.users.serializers.UserSerializer",
-        "current_user":"apps.users.serializers.userSerializer",
+        "current_user":"apps.users.serializers.UserSerializer",
         "user_delete":"djoser.serializers.UserDeleteSerializer"
     }
 }
